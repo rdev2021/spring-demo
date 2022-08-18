@@ -1,0 +1,10 @@
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: spring-demo-secret
+type: Opaque
+data:
+  mysql_hostname: bXlzcWxob3N0
+  mysql_username: YXBwdXNlcg==
+  mysql_password: YXBwcGFzcw==
