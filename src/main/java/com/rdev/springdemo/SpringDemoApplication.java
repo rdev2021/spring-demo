@@ -5,6 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -28,14 +29,8 @@ public class SpringDemoApplication {
 	}
 
 	@PostMapping("/item")
-	public @ResponseBody String addItem(@RequestParam String name, @RequestParam String category,
-			@RequestParam Boolean available) {
-		Item item = new Item();
-		item.setItem(name);
-		item.setCategory(category);
-		item.setAvailable(available);
-
-		itemRepository.save(item);
-		return "Item Saved !!";
+	public @ResponseBody Item addItem(@RequestBody Item item) {
+		Item save = itemRepository.save(item);
+		return save;
 	}
 }
