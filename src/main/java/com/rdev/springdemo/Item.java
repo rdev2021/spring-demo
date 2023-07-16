@@ -12,9 +12,9 @@ import lombok.Data;
 public class Item {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     Integer id;
     String item;
     String category;
-    Boolean available;    
+    Boolean available;
 }
